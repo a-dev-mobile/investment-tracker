@@ -26,6 +26,7 @@ vendor/
 tmp/
 
 # VS Code specific files
+!.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -35,3 +36,4 @@ tmp/
 # Исключаем локальные настройки, которые могут содержать чувствительные данные
 .env
 .env.*
+*.log
