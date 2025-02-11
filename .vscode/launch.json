@@ -1,33 +1,34 @@
 {
   "version": "0.2.0",
   "configurations": [
-      {
-          "name": "Launch Package",
-          "type": "go",
-          "request": "launch",
-          "mode": "auto",
-          "program": "${workspaceFolder}/cmd/server/main.go",
-          "env": {
-              "ENV": "local"
-          },
-          "args": []
+    {
+      "name": "Debug Investment Tracker",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}/cmd/server/main.go",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "ENV": "local"
       },
-      {
-          "name": "Debug Tests",
-          "type": "go",
-          "request": "launch",
-          "mode": "test",
-          "program": "${fileDirname}",
-          "env": {
-              "ENV": "local"
-          }
-      },
-      {
-          "name": "Attach to Process",
-          "type": "go",
-          "request": "attach",
-          "mode": "local",
-          "processId": 0
+      "args": []
+    },
+    {
+      "name": "Debug Tests",
+      "type": "go",
+      "request": "launch",
+      "mode": "test",
+      "program": "${fileDirname}",
+      "env": {
+        "ENV": "local"
       }
+    },
+    {
+      "name": "Attach to Process",
+      "type": "go",
+      "request": "attach",
+      "mode": "local",
+      "processId": 0
+    }
   ]
 }
