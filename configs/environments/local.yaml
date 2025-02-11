@@ -1,0 +1,14 @@
+environment: local
+database:
+  host: db
+  port: 5432
+  name: investment_db
+  user: postgres
+  password: postgres
+
+server:
+  port: 8080
+  host: 0.0.0.0
+
+market_data:
+  update_interval: 1m
