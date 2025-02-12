@@ -16,7 +16,7 @@ services:
       - app-network
 
   db:
-    image: postgres:16-alpine
+    image: postgres:17.2
     environment:
       POSTGRES_DB: investment_db
       POSTGRES_USER: postgres

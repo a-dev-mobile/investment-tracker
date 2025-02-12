@@ -3,7 +3,10 @@ FROM golang:1.24rc3-alpine AS builder
 
 WORKDIR /app
 
-# Установка зависимостей для сборки
+# Add build argument for environment
+ARG ENV=local
+ENV ENV=${ENV}
+
 RUN apk add --no-cache git
 
 # Копируем только файлы, необходимые для загрузки зависимостей
@@ -28,7 +31,10 @@ RUN apk --no-cache add ca-certificates tzdata
 COPY --from=builder /app/main .
 COPY --from=builder /app/configs /app/configs
 
-# Создаем непривилегированного пользователя
+# Pass environment from build arg to runtime
+ARG ENV=local
+ENV ENV=${ENV}
+
 RUN adduser -D appuser
 USER appuser
 
